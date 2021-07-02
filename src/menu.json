@@ -1,0 +1,18 @@
+[
+  {
+    "path": "/nosotros",
+    "name": "Nosotros"
+  },
+  {
+    "path": "/construcciones",
+    "name": "Construcciones"
+  },
+  {
+    "path": "/equipamientos",
+    "name": "Equipamientos"
+  },
+  {
+    "path": "/contacto",
+    "name": "Contacto"
+  }
+]

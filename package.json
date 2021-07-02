@@ -1,0 +1,21 @@
+{
+  "name": "vue-gridsome-site",
+  "private": true,
+  "scripts": {
+    "dev": "gridsome develop",
+    "explore": "gridsome explore",
+    "build": "gridsome build"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.1.1",
+    "@heroicons/vue": "^1.0.1",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/postcss7-compat": "^2.1.2",
+    "autoprefixer": "^9.8.6",
+    "axios": "^0.21.1",
+    "gridsome": "^0.7.0",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
+    "vue-tailwind": "^2.2.1"
+  }
+}

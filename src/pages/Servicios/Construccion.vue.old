@@ -1,0 +1,107 @@
+<template>
+  <Layout>
+    <div class="p-5">
+      Total Users: {{ totalUsers }}
+      <div>
+        <button
+          class="border border-yellow-600 rounded-md p-3 my-5 mr-5"
+          :class="{ 'bg-yellow-600': allActive }"
+          @click.prevent="allActive = !allActive"
+        >
+          <span v-if="allActive">Ninguno</span>
+          <span v-else>Todos</span>
+        </button>
+        <button
+          class="border border-yellow-600 rounded-md p-3 my-5 mr-5"
+          v-for="(filter, index) in filters"
+          :item="filter.name"
+          :key="index"
+          :class="{ 'bg-yellow-600': filter.selected }"
+          @click="filterData(index)"
+        >
+          {{ filter.name }}
+        </button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div v-for="(entry, index) in users" :key="index" class="border border-gray-700 bg-gray-300 rounded-md p-3">
+          <h3>Name: {{ entry.node.name }}</h3>
+          <h3>Age: {{ entry.node.age }}</h3>
+          <span class="language"
+            >Primary Language: <strong>{{ entry.node.mainLanguage }}</strong></span
+          >
+        </div>
+      </div>
+    </div>
+  </Layout> 
+</template>
+
+<script>
+export default {
+  name: "Construccion",
+  metaInfo: {
+    title: 'Construcción'
+  },
+  data: function() {
+    return {
+      totalUsers: 0,
+      filters: [],
+      initialFilters: [
+        { id: 1, name:"JavaScript", selected: true }, 
+        { id: 2, name:"Python", selected: false },
+        { id: 3, name:"PHP", selected: false }, 
+        { id: 4, name:"Java", selected: false },
+        { id: 5, name:"HTML/CSS", selected: true }
+      ],
+      allActive: true,
+      users: [],
+      fetchedUsers: []
+    };
+  },
+  methods: {
+    filterData: function (index) {
+      this.filters[index].selected = !this.filters[index].selected;
+    }
+  },
+  watch: {
+    fetchedUsers: function() {
+      this.users = this.fetchedUsers;
+      this.totalUsers = this.users.length;
+    },
+    filters: {
+      handler() {
+        this.users =
+          this.fetchedUsers.filter( 
+            user => this.filters.find( 
+              filter => filter.name === user.node.mainLanguage && filter.selected 
+            )
+          );
+        this.totalUsers = this.users.length;
+        localStorage.setItem('filters', JSON.stringify(this.filters))
+      },
+      deep: true
+    },
+    allActive: function() {
+      this.filters.forEach(filter => filter.selected = this.allActive );
+    }
+  },
+  mounted() {
+    this.fetchedUsers = this.$page.users.edges;
+    this.filters = JSON.parse(localStorage.getItem('filters')) ||this.initialFilters;
+  }
+}
+</script>
+
+<page-query>
+query {
+  users: allUsers {
+    edges {
+      node {
+        id
+        name
+        age
+        mainLanguage
+      }
+    }
+  }
+}
+</page-query>

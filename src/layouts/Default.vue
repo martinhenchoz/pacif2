@@ -1,22 +1,46 @@
 <template>
   <div class="layout">
     <div class="header">
-      <NavBar />
+      <nav-bar-component :modal="modal" @show-modal="showModal()" />
     </div>
     <div>
       <slot />
     </div>
-    <Footer />
+    <footer-component />
+
+    <!-- Modal (Formulario de Clientes) -->
+    <modal-window v-model="modal">
+      <form-clientes @hide-modal="hideModal()" />
+    </modal-window>
+
   </div>
 </template>
 
 <script>
 
-import NavBar from '../components/NavBar.vue'
-import Footer from '../components/Footer.vue'
+import NavBarComponent from '../components/NavBar.vue'
+import FooterComponent from '../components/Footer.vue'
+import FormClientes from "../components/FormClientes.vue"
 
 export default {
-  components: { Footer, NavBar }
+  data() {
+    return {
+      modal: false
+    }
+  },
+  components: { 
+    FooterComponent, 
+    NavBarComponent,
+    FormClientes
+  },
+  methods: {
+    showModal() {
+      this.modal = true
+    },
+    hideModal() {
+      this.modal = false
+    }
+  }
 }
 </script>
 

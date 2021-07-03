@@ -42,13 +42,13 @@
     </div>
     <div class="flex flex-col lg:flex-row">
       <div class="flex-1 max-w-5xl lg:max-w-3xl">
-        <div class="aspect-w-16 aspect-h-9">
+        <div class="aspect-w-16 aspect-h-12">
           <iframe 
-          src="https://www.youtube.com/embed/NX_NW6bt6_s" 
+          src="https://player.vimeo.com/video/2404408" 
           frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="autoplay; picture-in-picture"
           allowfullscreen
-          ></iframe>
+          />
         </div>
       </div>
       <div class="flex-1 flex-col max-w-5xl bg-gray-700 px-4 py-4 space-y-4 sm:px-16 sm:py-12 sm:space-y-12 lg:max-w-lg lg:min-w-min">

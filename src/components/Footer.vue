@@ -3,28 +3,32 @@
     <div class="flex flex-col space-y-6 justify-between items-center md:flex-row">
       <div class="flex flex-row space-x-32">
         <div>
-          <g-image
-            src="@/assets/logo-pacifico-construcciones.png"
-            class="w-auto h-12 lg:h-16"
-          />
+          <g-link to="/construcciones">
+            <g-image
+              src="@/assets/logo-pacifico-construcciones.png"
+              class="w-auto h-12 lg:h-16"
+            />
+          </g-link>
         </div>
         <div>
-          <g-image
-            src="@/assets/logo-pacifico-equipamientos.png"
-            class="w-auto h-12 lg:h-16"
-          />
+          <g-link to="/equipamientos">
+            <g-image
+              src="@/assets/logo-pacifico-equipamientos.png"
+              class="w-auto h-12 lg:h-16"
+            />
+          </g-link>
         </div>
       </div>
       <div class="flex flex-row items-center space-x-8">
         <div>SIGUENOS EN</div>
-        <div class="flex flex-row">
+        <div class="flex flex-row space-x-8">
           <a href="#" class="text-gray-500 hover:text-pacif">
             <svg
               fill="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              class="w-5 h-5"
+              class="w-8 h-8"
               viewBox="0 0 24 24"
             >
               <path
@@ -38,7 +42,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              class="w-5 h-5"
+              class="w-8 h-8"
               viewBox="0 0 24 24"
             >
               <path
@@ -53,7 +57,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              class="w-5 h-5"
+              class="w-8 h-8"
               viewBox="0 0 24 24"
             >
               <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
@@ -69,7 +73,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="0"
-              class="w-5 h-5"
+              class="w-8 h-8"
               viewBox="0 0 24 24"
             >
               <path

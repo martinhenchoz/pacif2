@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.link {
-  @apply bg-yellow-600 text-white rounded p-3;
-}
-
 .layout {
   @apply max-w-7xl mx-auto;
 }

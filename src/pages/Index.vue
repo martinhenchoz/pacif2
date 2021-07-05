@@ -1,11 +1,11 @@
 <template>
   <Layout>
-    <div class="bg-image w-full flex flex-col sm:flex-row">
-      <div class="sm:w-2/5 bg-pacif bg-opacity-90 pt-16 sm:pt-24 inset-y-0">
+    <div class="bg-image w-full flex flex-col md:flex-row">
+      <div class="md:w-2/5 bg-pacif bg-opacity-90 pt-16 md:pt-24 inset-y-0">
         <div>
           <g-image
             src="@/assets/construyendo-excelencia.png"
-            class="mt-16 sm:mt-24 ml-16"
+            class="mt-16 md:mt-24 ml-16"
           />
         </div>
         <a
@@ -18,7 +18,7 @@
         <div>
         </div>
       </div>
-      <div class="sm:w-3/5 bg-gray-800 bg-opacity-80 p-16 pt-12 sm:pt-44">
+      <div class="md:w-3/5 bg-gray-800 bg-opacity-80 p-16 pt-12 md:pt-44">
         <p class="text-white font-medium text-justify pb-2">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
           debitis dicta mollitia sit commodi. Quasi odit aut quos officiis. Ut,
@@ -41,7 +41,7 @@
           accusantium praesentium ipsum assumenda corrupti voluptas placeat
           possimus tenetur, veritatis ut necessitatibus natus!
         </p>
-        <p class="text-white font-medium text-justify">
+        <p class="text-white font-medium text-justify pb-8">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
           debitis dicta mollitia sit commodi. Quasi odit aut quos officiis. Ut,
           voluptatem veritatis odio itaque optio eum? Quod a aut quis! Lorem

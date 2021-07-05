@@ -27,17 +27,16 @@ const settings = {
       classes: {
         button: 'hover:bg-red-700 hover:text-white',
         dropdown: 'bg-gray-50'
-      },
-      variants: {}
+      }
     }
   },
   'modal-window': {
     component: TModal,
     props: {
       fixedClasses: {
-        overlay: 'z-40  overflow-auto scrolling-touch left-0 top-0 bottom-0 right-0 w-full h-full fixed bg-opacity-50',
+        overlay: 'z-40 overflow-auto left-0 top-0 bottom-0 right-0 w-full h-full fixed bg-opacity-50',
         wrapper: 'relative mx-auto z-50 max-w-3xl px-3 py-12',
-        modal: 'overflow-visible relative  rounded',
+        modal: 'overflow-visible relative rounded',
         body: 'p-3',
         header: 'border-b p-3 rounded-t',
         footer: 'p-3 rounded-b',
@@ -65,15 +64,6 @@ const settings = {
         leaveClass: '',
         leaveActiveClass: '',
         leaveToClass: ''
-      },
-      variants: {
-        danger: {
-          overlay: 'bg-red-100',
-          header: 'border-red-50 text-red-700',
-          close: 'bg-red-50 text-red-700 hover:bg-red-200 border-red-100 border',
-          modal: 'bg-white border border-red-100 shadow-lg',
-          footer: 'bg-red-50'
-        }
       }
     }
   }

@@ -4,7 +4,7 @@
     id="nav"
     :classes="{}"
     :fixed-classes="{}"
-    class="max-w-7xl bg-gray-900 transition duration-1000"
+    class="max-w-7xl bg-opacity-100 bg-gray-800 transition duration-1000"
     :class="toggleNavClass()"
   >
     <div
@@ -16,21 +16,21 @@
         keydownHandler,
         isShown,
       }"
-      class="flex items-center justify-between w-full px-4 sm:px-6 lg:px-16"
+      class="flex items-center justify-between w-full px-6 lg:px-16"
     >
       <!-- Logo Pacifico -->
       <div class="flex flex-shrink-0">
         <g-link to="/">
           <g-image
             class="w-auto origin-left transition transform duration-500 scale-75"
-            :class="{ 'sm:scale-100': !sticky, 'sm:scale-75': sticky }"
+            :class="{ 'md:scale-100': !sticky, 'md:scale-75': sticky }"
             src="~/assets/logo_pacifico_blanco.png"
           />
         </g-link>
       </div>
 
       <!-- Mobile menu button -->
-      <div class="flex items-center sm:hidden">
+      <div class="flex items-center md:hidden">
         <button
           class="inline-flex items-center justify-center p-1 bg-white transition duration-150 ease-in-out rounded-md hover:bg-pacif focus:outline-none focus:bg-pacif"
           aria-label="Main menu"
@@ -72,7 +72,7 @@
       </div>
 
       <!-- Desktop Menu -->
-      <div class="hidden sm:flex items-center">
+      <div class="hidden md:flex items-center">
         <g-link
           v-for="item in menu"
           :to="item.path"
@@ -92,7 +92,7 @@
     <!-- Mobile Menu -->
     <div
       slot-scope="{ hide }"
-      class="px-1 pt-4 pb-3 sm:hidden sm:px-3"
+      class="px-1 pt-4 pb-3 md:hidden md:px-3"
     >
       <g-link
         v-for="item in menu"
@@ -104,6 +104,11 @@
       >
         {{ item.name }}
       </g-link>
+      <a href="" class="block px-3 py-2 text-white transition ease-in-out hover:border hover:bg-red-700 hover:text-white focus:outline-none focus:bg-gray-100" 
+      @click="showWindow"
+      >
+        Clientes
+      </a>
     </div>
   </drop-down>
 </template>
@@ -127,9 +132,9 @@ export default {
     },
     toggleNavClass() {
       if (this.sticky == false) {
-        return "sm:bg-opacity-0 sm:py-10"
+        return "py-6 md:py-10 md:bg-opacity-0"
       } else {
-        return "sm:bg-opacity-80 sm:py-5"
+        return "py-3 md:py-5 md:bg-opacity-80"
       }
     },
   },
